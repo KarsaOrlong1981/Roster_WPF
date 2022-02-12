@@ -93,6 +93,7 @@
     <Compile Include="ViewModels\AddEmployeeViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\RosterViewModel.cs" />
     <Compile Include="ViewModels\UpdateEmployeeViewModel.cs" />
     <Compile Include="Views\AddEmployeesView.xaml.cs">
       <DependentUpon>AddEmployeesView.xaml</DependentUpon>

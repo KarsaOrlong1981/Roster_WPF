@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Roster_WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,10 @@ namespace Roster_WPF.Views
         public RosterWindow()
         {
             InitializeComponent();
+            RosterViewModel vm = new RosterViewModel();
+            this.DataContext = vm;
+            if (vm.CloseAction == null)
+                vm.CloseAction = new Action(this.Close);
         }
     }
 }
