@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Roster_WPF.Views" xmlns:viewmodels="clr-namespace:Roster_WPF.ViewModels" xmlns:roster_wpf="clr-namespace:Roster_WPF" d:DataContext="{d:DesignInstance Type=roster_wpf:EmployeeCollection}"
         mc:Ignorable="d"
-        Title="Zum bearbeiten einen Mitarbeiter aus der Liste Wählen." Height="800" Width="1020" Unloaded="Window_Unloaded"  >
+        Title="Zum bearbeiten einen Mitarbeiter aus der Liste Wählen." Height="800" Width="1020" Unloaded="Window_Unloaded" WindowState="Maximized" WindowStartupLocation="CenterScreen"  >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -80,6 +80,9 @@
                     <GridViewColumn Header="Krankenschein bis" DisplayMemberBinding="{Binding HealthInsuranceCert_End}" Width="105" >
 
                     </GridViewColumn>
+                    <GridViewColumn Header="Einsatz Zeit" DisplayMemberBinding="{Binding OperatingTime}" Width="80" >
+
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -106,9 +109,21 @@
         <Label Content="Krank von" Grid.Row="0" HorizontalAlignment="Left"  Margin="330,75,0,0"/>
         <TextBox Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="420,110,0,0" VerticalAlignment="Top" Width="178" Text="{Binding ElementName=UserGrid,Path=SelectedItem.HealthInsuranceCert_End}" />
         <Label Content="Krank bis" Grid.Row="0" HorizontalAlignment="Left"  Margin="330,110,0,0"/>
-        <Button Content="Aktualisieren" Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="440,170,0,0" Name="btnAdd"   
+        <TextBox Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="420,145,0,0" VerticalAlignment="Top" Width="178" Text="{Binding ElementName=UserGrid,Path=SelectedItem.OperatingTime}" />
+        <Label Content="Einsatz Zeit" Grid.Row="0" HorizontalAlignment="Left"  Margin="330,145,0,0"/>
+        <Button Content="Aktualisieren" Grid.Row="0" Height="23" HorizontalAlignment="Left" Margin="440,180,0,0" Name="btnAdd"   
                 VerticalAlignment="Top" Width="141"  
                 Command="{Binding UpdateCommand}"  />
-        <Label Content="!!! zum übernehmen der Daten das Fenster schließen !!!" Grid.Row="0" HorizontalAlignment="Left"  Margin="330,200,0,0"/>
+        <Label Content="!!! zum übernehmen der Daten das Fenster schließen !!!" Grid.Row="0" HorizontalAlignment="Left"  Margin="330,210,0,0"/>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Right" >
+            <Label Content="Einsatz Zeiten:"  FontSize="20" />
+            <Label Content="1 = nur Frühschicht"  FontSize="15" />
+            <Label Content="2 = nur Spätschicht"  FontSize="15" />
+            <Label Content="3 = nur Nachtschicht" FontSize="15" />
+            <Label Content="4 = Früh- oder Nachtschicht"  FontSize="15" />
+            <Label Content="5 = Spät- oder Nachtschicht"  FontSize="15" />
+            <Label Content="6 = Früh- oder Spätschicht"  FontSize="15" />
+            <Label Content="7 = Früh-, Spät- und Nachtschicht"  FontSize="15" />
+        </StackPanel>
     </Grid>
 </Window>

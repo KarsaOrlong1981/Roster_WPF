@@ -7,15 +7,17 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Roster_WPF.ViewModels
 {
     public class RosterViewModel : EmployeeCollection, INotifyPropertyChanged
     {
-        private struct FirstandLastName
+        private struct EmployeePropertys
         {
             public string FirstName { get; set; }
             public string LastName { get; set; }
+            public string Color { get; set; }
         }
         public Action CloseAction { get; set; }//To close window CloseAction();
         #region INotyfyPropertyChanged
@@ -113,17 +115,43 @@ namespace Roster_WPF.ViewModels
             }
         }
         #endregion // Week Roster
-        private List<FirstandLastName> list;
+        private List<EmployeePropertys> list;
+        public RosterViewModel()
+        {
+            MondayList = new ObservableCollection<Roster>();
+            TuesdayList = new ObservableCollection<Roster>();
+            WednesdayList = new ObservableCollection<Roster>();
+            ThursdayList = new ObservableCollection<Roster>();
+            FridayList = new ObservableCollection<Roster>();
+            SaturdayList = new ObservableCollection<Roster>();
+            GetEmployeesName();
+            TestRoster ();
+        }
+        private void TestRoster()
+        {
+            foreach (var item in list)
+            {
+                Roster ro = new Roster();
+                ro.Color = item.Color;
+                ro.Name = item.FirstName;
+                ro.LastName = item.LastName;
+                ro.Is_6_OClock = Visibility.Visible;
+                ro.Is_7_OClock = Visibility.Hidden;
+                MondayList.Add(ro);
+            }
+        }
         private void GetEmployeesName()
         {   
-            FirstandLastName name = new FirstandLastName();
-            list = new List<FirstandLastName>();
+            EmployeePropertys name = new EmployeePropertys();
+            list = new List<EmployeePropertys>();
             foreach (var item in EmployeeList)
             {
                 name.FirstName = item.Name;
                 name.LastName = item.LastName;
+                name.Color = item.Color;
                 list.Add(name);
             }
         }
+
     }
 }

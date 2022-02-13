@@ -58,6 +58,7 @@ namespace Roster_WPF.Views
                     MissingHours = item.MissingHours,
                     Layer = item.Layer,
                     Place = item.Place,
+                    OperatingTime = item.OperatingTime,
                 });
             }
 

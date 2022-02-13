@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Roster_WPF.Views" xmlns:viewmodels="clr-namespace:Roster_WPF.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:RosterViewModel}"
         mc:Ignorable="d"
-        Title="RosterWindow" Height="450" Width="800">
+        Title="RosterWindow" Height="800" Width="1700" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         <ScrollViewer>
             <Grid>
@@ -18,39 +18,1229 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <ListView Name="MondayGrid" Grid.Row="0" Margin="4,0,4,0"  ItemsSource="{Binding MondayList}" >
+                <!-- Monday List-->
+                <Label Content="Montag" FontSize="25" />
+                <ListView Name="MondayGrid" Grid.Row="0" Margin="4,50,4,0"  ItemsSource="{Binding MondayList}" >
                     <ListView.View>
-                        <GridView x:Name="grdMonday" AllowsColumnReorder="True" >
+                        <GridView x:Name="grdMonday" AllowsColumnReorder="True">
+                            <GridViewColumn Header="Name" Width="80" DisplayMemberBinding="{Binding Name}">
+                                
+                            </GridViewColumn>
+                            <GridViewColumn Header="Nachname" Width="80" DisplayMemberBinding="{Binding LastName}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header="6:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_6_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="7:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_7_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="8:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_8_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="9:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_9_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="10:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_10_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="11:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_11_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="12:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_12_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="13:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_13_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="14:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_14_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="15:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_15_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="16:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_16_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="17:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_17_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="18:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_18_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="19:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_19_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="20:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_20_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="21:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_21_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="22:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_22_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="23:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_23_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="24:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_24_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
                         </GridView>
                     </ListView.View>
                 </ListView>
-                <ListView Name="TuesdayGrid" Grid.Row="1" Margin="4,0,4,0"  ItemsSource="{Binding TuesdayList}" >
+                <!-- Tuesday List-->
+                <Label Grid.Row="1" Content="Dienstag" FontSize="25" />
+                <ListView Name="TuesdayGrid" Grid.Row="1" Margin="4,50,4,0"  ItemsSource="{Binding TuesdayList}" >
                     <ListView.View>
                         <GridView x:Name="grdTuesday" AllowsColumnReorder="True" >
+                            <GridViewColumn Header="Name" Width="80" DisplayMemberBinding="{Binding Name}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header="Nachname" Width="80" DisplayMemberBinding="{Binding LastName}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header="6:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_6_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="7:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_7_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="8:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_8_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="9:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_9_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="10:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_10_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="11:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_11_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="12:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_12_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="13:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_13_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="14:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_14_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="15:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_15_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="16:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_16_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="17:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_17_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="18:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_18_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="19:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_19_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="20:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_20_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="21:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_21_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="22:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_22_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="23:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_23_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="24:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_24_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>
-                <ListView Name="WednesdayGrid" Grid.Row="2" Margin="4,0,4,0"  ItemsSource="{Binding WednesdayList}" >
+                <!-- Wednesday List-->
+                <Label Grid.Row="2" Content="Mittwoch" FontSize="25" />
+                <ListView Name="WednesdayGrid" Grid.Row="2" Margin="4,50,4,0"  ItemsSource="{Binding WednesdayList}" >
                     <ListView.View>
                         <GridView x:Name="grdWednesday" AllowsColumnReorder="True" >
+                            <GridViewColumn Header="Name" Width="80" DisplayMemberBinding="{Binding Name}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header="Nachname" Width="80" DisplayMemberBinding="{Binding LastName}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header="6:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_6_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="7:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_7_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="8:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_8_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="9:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_9_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="10:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_10_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="11:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_11_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="12:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_12_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="13:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_13_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="14:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_14_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="15:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_15_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="16:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_16_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="17:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_17_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="18:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_18_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="19:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_19_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="20:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_20_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="21:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_21_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="22:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_22_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="23:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_23_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="24:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_24_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>
-                <ListView Name="ThursdayGrid" Grid.Row="3" Margin="4,0,4,0"  ItemsSource="{Binding ThursdayList}" >
+                <!-- Thursday List-->
+                <Label Grid.Row="3" Content="Donnerstag" FontSize="25" />
+                <ListView Name="ThursdayGrid" Grid.Row="3" Margin="4,50,4,0"  ItemsSource="{Binding ThursdayList}" >
                     <ListView.View>
                         <GridView x:Name="grdThursday" AllowsColumnReorder="True" >
+                            <GridViewColumn Header="Name" Width="80" DisplayMemberBinding="{Binding Name}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header="Nachname" Width="80" DisplayMemberBinding="{Binding LastName}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header="6:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_6_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="7:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_7_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="8:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_8_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="9:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_9_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="10:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_10_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="11:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_11_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="12:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_12_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="13:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_13_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="14:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_14_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="15:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_15_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="16:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_16_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="17:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_17_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="18:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_18_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="19:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_19_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="20:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_20_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="21:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_21_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="22:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_22_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="23:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_23_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="24:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_24_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                          
                         </GridView>
                     </ListView.View>
                 </ListView>
-                <ListView Name="FridayGrid" Grid.Row="4" Margin="4,0,4,0"  ItemsSource="{Binding FridayList}" >
+                <!-- Friday List-->
+                <Label Grid.Row="4" Content="Freitag" FontSize="25" />
+                <ListView Name="FridayGrid" Grid.Row="4" Margin="4,50,4,0"  ItemsSource="{Binding FridayList}" >
                     <ListView.View>
                         <GridView x:Name="grdFriday" AllowsColumnReorder="True" >
+                            <GridViewColumn Header="Name" Width="80" DisplayMemberBinding="{Binding Name}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header="Nachname" Width="80" DisplayMemberBinding="{Binding LastName}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header="6:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_6_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="7:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_7_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="8:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_8_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="9:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_9_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="10:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_10_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="11:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_11_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="12:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_12_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="13:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_13_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="14:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_14_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="15:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_15_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="16:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_16_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="17:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_17_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="18:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_18_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="19:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_19_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="20:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_20_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="21:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_21_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="22:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_22_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="23:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_23_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="24:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_24_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>
-                <ListView Name="SaturdayGrid" Grid.Row="5" Margin="4,0,4,0"  ItemsSource="{Binding SaturdayList}" >
+                <!-- Saturday List-->
+                <Label Grid.Row="5" Content="Samstag" FontSize="25" />
+                <ListView Name="SaturdayGrid" Grid.Row="5" Margin="4,50,4,0"  ItemsSource="{Binding SaturdayList}" >
                     <ListView.View>
                         <GridView x:Name="grdSaturday" AllowsColumnReorder="True" >
+                            <GridViewColumn Header="Name" Width="80" DisplayMemberBinding="{Binding Name}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header="Nachname" Width="80" DisplayMemberBinding="{Binding LastName}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header="6:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_6_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="7:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_7_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="8:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_8_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="9:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_9_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="10:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_10_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="11:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_11_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="12:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_12_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="13:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_13_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="14:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_14_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="15:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_15_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="16:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_16_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="17:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_17_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="18:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_18_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="19:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_19_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="20:00" Width="80" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_20_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="21:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_21_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="22:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_22_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="23:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_23_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Header="24:00" Width="80">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="{Binding Color}" Height="20" Width="80" Visibility="{Binding Is_24_OClock}"></Rectangle>
+                                            <Label />
+                                        </Grid>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>

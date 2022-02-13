@@ -13,7 +13,7 @@ namespace Roster_WPF.ViewModels
 
         public ICommand EmployeeViewCommand { get; set; }
         public ICommand AddEmployeeCommand { get; set; }
-        public ICommand TempFil_1Command { get; set; }
+        public ICommand GetRosterCommand { get; set; }
         public ICommand UpdateEmployeeCommand { get; set; }
 
         #endregion // ICommands
@@ -34,7 +34,7 @@ namespace Roster_WPF.ViewModels
         {
             EmployeeViewCommand = new RelayCommand(CallEmployeeView);
             AddEmployeeCommand = new RelayCommand(CallAddEmployee);
-            TempFil_1Command = new RelayCommand(CallFil_1);
+            GetRosterCommand = new RelayCommand(CallRoster);
             UpdateEmployeeCommand = new RelayCommand(CallUpdateEmployee);
         }
         #endregion // Constructors
@@ -53,9 +53,10 @@ namespace Roster_WPF.ViewModels
             call.Show();
           
         }
-        private void CallFil_1(object parameter)
+        private void CallRoster(object parameter)
         {
-           
+           RosterWindow call = new RosterWindow();
+            call.Show();
         }
         private void CallUpdateEmployee(object parameter)
         {

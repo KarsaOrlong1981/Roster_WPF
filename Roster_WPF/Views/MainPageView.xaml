@@ -28,7 +28,7 @@
                />
                 <Button Content="Dienstplan erstellen" FontSize="20" Grid.Row="1" Height="35" HorizontalAlignment="Left" Margin="0,50,0,0" Name="btnRosterFil_1"   
                         VerticalAlignment="Top" Width="320"  
-                        Command="{Binding TempFil_1Command}"
+                        Command="{Binding GetRosterCommand}"
                />
                 
                

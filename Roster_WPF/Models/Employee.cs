@@ -13,7 +13,7 @@ namespace Roster_WPF.Models
         public int Id { get; set; }
         public string Layer { get; set; }
         public string Color { get; set; }
-       
+        public int OperatingTime { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Status { get; set; }

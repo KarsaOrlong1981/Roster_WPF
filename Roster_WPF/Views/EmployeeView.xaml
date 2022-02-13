@@ -12,7 +12,15 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ListView Name="UserGrid" Grid.Row="1" Margin="4,178,12,13"  ItemsSource="{Binding EmployeeList}" >
+        <Label Grid.Row="0" Content="Einsatz Zeiten:" Margin="4,20,0,0" FontSize="20" />
+        <Label Grid.Row="0" Content="1 = nur Frühschicht" Margin="4,45,0,0" FontSize="20" />
+        <Label Grid.Row="0" Content="2 = nur Spätschicht" Margin="4,70,0,0" FontSize="20" />
+        <Label Grid.Row="0" Content="3 = nur Nachtschicht" Margin="4,95,0,0" FontSize="20" />
+        <Label Grid.Row="0" Content="4 = Früh- oder Nachtschicht" Margin="4,120,0,0" FontSize="20" />
+        <Label Grid.Row="0" Content="5 = Spät- oder Nachtschicht" Margin="4,145,0,0" FontSize="20" />
+        <Label Grid.Row="0" Content="6 = Früh- oder Spätschicht" Margin="4,170,0,0" FontSize="20" />
+        <Label Grid.Row="0" Content="7 = Früh-, Spät- und Nachtschicht" Margin="4,195,0,0" FontSize="20" />
+        <ListView Name="UserGrid" Grid.Row="1" Margin="4,20,12,13"  ItemsSource="{Binding EmployeeList}" >
             <ListView.View>
                 <GridView x:Name="grdTest" AllowsColumnReorder="True" >
                     <GridViewColumn   Width="30">
@@ -36,9 +44,9 @@
                     <GridViewColumn    Width="80" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Grid>
-                                    <Rectangle Fill="{Binding Color}" ></Rectangle>
-                                    <Label Content="{Binding Path=Name}" Foreground="White"></Label>
+                                <Grid Width="80">
+                                    <Rectangle Fill="{Binding Color}"  ></Rectangle>
+                                    <Label Content="{Binding Path=Name}"  Foreground="White"></Label>
                                 </Grid>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -54,7 +62,7 @@
                     <GridViewColumn    Width="80" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid Width="80">
                                     <Rectangle Fill="{Binding Color}" ></Rectangle>
                                     <Label Content="{Binding Path=LastName}" Foreground="White"></Label>
                                 </Grid>
@@ -72,7 +80,7 @@
                     <GridViewColumn   Width="105" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid Width="105">
                                     <Rectangle Fill="{Binding Color}" ></Rectangle>
                                     <Label Content="{Binding Path=PhoneNumber}" Foreground="White"></Label>
                                 </Grid>
@@ -90,7 +98,7 @@
                     <GridViewColumn Header="Status" Width="80">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid Width="80">
                                     <Rectangle Fill="{Binding Color}" ></Rectangle>
                                     <Label Content="{Binding Path=Status}" Foreground="White"></Label>
                                 </Grid>
@@ -100,7 +108,7 @@
                     <GridViewColumn Header="Stunden aktuell"  Width="100" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid Width="100">
                                     <Rectangle Fill="{Binding Color}" ></Rectangle>
                                     <Label Content="{Binding Path=HoursNow}" Foreground="White"></Label>
                                 </Grid>
@@ -110,7 +118,7 @@
                     <GridViewColumn Header="Stunden soll (Monat)" Width="70" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid Width="70">
                                     <Rectangle Fill="{Binding Color}" ></Rectangle>
                                     <Label Content="{Binding Path=HoursMonth}" Foreground="White"></Label>
                                 </Grid>
@@ -120,7 +128,7 @@
                     <GridViewColumn Header="Stunden minus"  Width="90" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid Width="90">
                                     <Rectangle Fill="{Binding Color}" ></Rectangle>
                                     <Label Content="{Binding Path=MissingHours}" Foreground="White"></Label>
                                 </Grid>
@@ -131,7 +139,7 @@
                     <GridViewColumn Header="Urlaub von"  Width="80" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid Width="80">
                                     <Rectangle Fill="{Binding Color}" ></Rectangle>
                                     <Label Content="{Binding Path=HolidayStart}" Foreground="White"></Label>
                                 </Grid>
@@ -141,7 +149,7 @@
                     <GridViewColumn Header="Urlaub bis"  Width="80" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid Width="80">
                                     <Rectangle Fill="{Binding Color}" ></Rectangle>
                                     <Label Content="{Binding Path=HolidayEnd}" Foreground="White"></Label>
                                 </Grid>
@@ -151,7 +159,7 @@
                     <GridViewColumn Header="Krankenschein von"  Width="105" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid Width="105">
                                     <Rectangle Fill="{Binding Color}" ></Rectangle>
                                     <Label Content="{Binding Path=HealthInsuranceCert_Start}" Foreground="White"></Label>
                                 </Grid>
@@ -161,14 +169,26 @@
                     <GridViewColumn Header="Krankenschein bis"  Width="105" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Grid>
+                                <Grid Width="105">
                                     <Rectangle Fill="{Binding Color}" ></Rectangle>
                                     <Label Content="{Binding Path=HealthInsuranceCert_End}" Foreground="White"></Label>
                                 </Grid>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
+                    <GridViewColumn Header="Einsatz Zeit"  Width="80" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Width="80">
+                                    <Rectangle Fill="{Binding Color}" ></Rectangle>
+                                    <Label Content="{Binding Path=OperatingTime}" Foreground="White"></Label>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                
                 </GridView>
+                
             </ListView.View>
         </ListView>
     </Grid>
