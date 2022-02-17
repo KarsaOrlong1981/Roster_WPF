@@ -16,7 +16,7 @@ namespace Roster_WPF.Models
         public int OperatingTime { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
         public double HoursNow { get; set; }
         public double HoursMonth { get; set; }
         public double MissingHours { get; set; }

@@ -13,12 +13,7 @@ namespace Roster_WPF.ViewModels
 {
     public class RosterViewModel : EmployeeCollection, INotifyPropertyChanged
     {
-        private struct EmployeePropertys
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public string Color { get; set; }
-        }
+       
         public Action CloseAction { get; set; }//To close window CloseAction();
         #region INotyfyPropertyChanged
 
@@ -115,7 +110,7 @@ namespace Roster_WPF.ViewModels
             }
         }
         #endregion // Week Roster
-        private List<EmployeePropertys> list;
+       
         public RosterViewModel()
         {
             MondayList = new ObservableCollection<Roster>();
@@ -124,34 +119,115 @@ namespace Roster_WPF.ViewModels
             ThursdayList = new ObservableCollection<Roster>();
             FridayList = new ObservableCollection<Roster>();
             SaturdayList = new ObservableCollection<Roster>();
-            GetEmployeesName();
-            TestRoster ();
+            
+            GetMondayList();
         }
-        private void TestRoster()
+       
+        #region Day Lists
+        private void GetMondayList()
         {
-            foreach (var item in list)
+            foreach (var item in EmployeeList)
             {
                 Roster ro = new Roster();
-                ro.Color = item.Color;
-                ro.Name = item.FirstName;
-                ro.LastName = item.LastName;
-                ro.Is_6_OClock = Visibility.Visible;
-                ro.Is_7_OClock = Visibility.Hidden;
+                ExamineStatus(ro, item);
+                
                 MondayList.Add(ro);
             }
         }
-        private void GetEmployeesName()
-        {   
-            EmployeePropertys name = new EmployeePropertys();
-            list = new List<EmployeePropertys>();
-            foreach (var item in EmployeeList)
-            {
-                name.FirstName = item.Name;
-                name.LastName = item.LastName;
-                name.Color = item.Color;
-                list.Add(name);
-            }
+        #endregion // Day Lists
+        #region Scrutinies
+        private void ExamineStatus(Roster ro, Employee propertys)
+        {
+            
+            
+                switch (propertys.Status)
+                {
+                    case 1: ExamineOperatingTime(ro, propertys) ; break;
+                    case 2:  break; //Status 2 = Urlaub, prüfen von - bis und die und nur Name anzeigen und alle felder auf Hidden setzen
+                    case 3:  break; //Status 3 = Krank, prüfen von - bis und die und nur Name anzeigen und alle felder auf Hidden setzen
+                    default : break;//nur name anzeigen und alle felder auf Hidden setzen
+                }
+            
         }
+        private void ExamineOperatingTime(Roster ro, Employee propertys)
+        {
+           
+            
+                switch (propertys.OperatingTime)
+                {
+                    case 1: SwitchEarly(ro, propertys); break;
+                    case 2: SwitchLate(ro, propertys); break;
+                    case 3: break; // Switch Nigth
+                    case 4:; break; // zeit = früh oder Nacht / überprüfen wieviele leute insgesamt für die verschiedenen Schichten
+                                    // benötigt werden und abgleichen wer die schichten je nach operatingTime belegen kann
+                    case 5: break; // zeit = spät oder Nacht / überprüfen wieviele leute insgesamt für die verschiedenen Schichten
+                                   // benötigt werden und abgleichen wer die schichten je nach operatingTime belegen kann
+                    case 6: break; // zeit = früh oder Spät / überprüfen wieviele leute insgesamt für die verschiedenen Schichten
+                                   // benötigt werden und abgleichen wer die schichten je nach operatingTime belegen kann
+                    case 7: break; // zeit = früh,Spät,Nacht / überprüfen wieviele leute insgesamt für die verschiedenen Schichten
+                                   // benötigt werden und abgleichen wer die schichten je nach operatingTime belegen kann
+                    default: break;
+                }
+            
+        }
+        
+        #endregion //Scrutinies
+        
+        private Roster SwitchEarly(Roster ro, Employee propertys)
+        {
+            ro.Name = propertys.Name;
+            ro.LastName = propertys.LastName;
+            ro.Color = propertys.Color;
+            ro.Is_15_OClock = Visibility.Hidden;
+            ro.Is_16_OClock = Visibility.Hidden;
+            ro.Is_17_OClock = Visibility.Hidden;
+            ro.Is_18_OClock = Visibility.Hidden;
+            ro.Is_19_OClock = Visibility.Hidden;
+            ro.Is_20_OClock = Visibility.Hidden;
+            ro.Is_21_OClock = Visibility.Hidden;
+            ro.Is_22_OClock = Visibility.Hidden;
+            ro.Is_23_OClock = Visibility.Hidden;
+            ro.Is_24_OClock = Visibility.Hidden;
+            return ro;
+        }
+        private Roster SwitchLate(Roster ro, Employee propertys)
+        {
+            ro.Name = propertys.Name;
+            ro.LastName = propertys.LastName;
+            ro.Color = propertys.Color;
+            
+
+            ro.Is_6_OClock = Visibility.Hidden;
+            ro.Is_7_OClock = Visibility.Hidden;
+            ro.Is_8_OClock = Visibility.Hidden;
+            ro.Is_9_OClock = Visibility.Hidden;
+            ro.Is_10_OClock = Visibility.Hidden;
+            ro.Is_11_OClock = Visibility.Hidden;
+            ro.Is_12_OClock = Visibility.Hidden;
+            ro.Is_13_OClock = Visibility.Hidden;
+
+            ro.Is_23_OClock = Visibility.Hidden;
+            ro.Is_24_OClock = Visibility.Hidden;
+            return ro;
+        }
+        /*private EmployeePropertys SwitchNigth(EmployeePropertys propertys, Employee employee)
+        {
+            propertys.FirstName = employee.Name;
+            propertys.LastName = employee.LastName;
+            propertys.Color = employee.Color;
+            
+            propertys.Is_7_OClock = Visibility.Hidden;
+            propertys.Is_8_OClock = Visibility.Hidden;
+            propertys.Is_9_OClock = Visibility.Hidden;
+            propertys.Is_10_OClock = Visibility.Hidden;
+            propertys.Is_11_OClock = Visibility.Hidden;
+            propertys.Is_12_OClock = Visibility.Hidden;
+            propertys.Is_13_OClock = Visibility.Hidden;
+
+            propertys.Is_23_OClock = Visibility.Hidden;
+            propertys.Is_24_OClock = Visibility.Hidden;
+            return propertys;
+        }*/
 
     }
 }
